@@ -4,30 +4,20 @@ const sequelize = require('../config/connection.js');
 
 class Category extends Model {}
 
-    // define columns
 Category.init(
   {
-    Clothing: {
-      type: DataTypes.STRING
+    id: {
+      type: DataTypes.INTEGER,
+      allowNull: false,
+      primaryKey: true,
+      autoIncrement: true
     },
-    Jewelry: {
-      type: DataTypes.STRING
-    },
-    Shoes: {
-      type: DataTypes.STRING
-    },
-    Books: {  
-      type: DataTypes.STRING
-    },
-    Electronics: {
-      type: DataTypes.STRING
-    },
-    Sports: {
-      type: DataTypes.STRING
+    category_name: {
+      type: DataTypes.STRING,
+      allowNull: false
     }
   },
   {
-    //Link to database connection
     sequelize,
     timestamps: false,
     freezeTableName: true,
